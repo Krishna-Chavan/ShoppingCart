@@ -1,8 +1,10 @@
 import React from 'react'
 import CountDownTimer from '../timer/CountDownTimer'
 import DealsOfDay from './DealsOfDay'
+import { useHistory } from 'react-router'
 
 export default function DealsOfDayList() {
+    let history = useHistory();
     const dealsOfDay = [
         {
             id: 1,
@@ -47,6 +49,10 @@ export default function DealsOfDayList() {
             category: 'womens slippers'
         }
     ]
+
+    function allProducts(){
+        history.push('/products')
+    }
     return (
         <div>
             <nav class="navbar navbar-light bg-light">
@@ -54,7 +60,7 @@ export default function DealsOfDayList() {
                     <a class="navbar-brand">Deals of the Day</a>
                     <a class="navbar-brand"><CountDownTimer/></a>
                     <form class="d-flex">
-                        <button class="btn btn-outline-primary" type="submit">View All</button>
+                        <button class="btn btn-outline-primary" type="submit" onClick={allProducts}>View All</button>
                     </form>
                 </div>
             </nav>
