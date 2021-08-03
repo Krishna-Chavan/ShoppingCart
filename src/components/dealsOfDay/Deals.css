@@ -1,0 +1,17 @@
+.ast-ps {
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+    width: 300px;
+    font-family: arial;
+    display: inline-block;
+    flex-direction: row;
+    padding: 10px;
+  }
+   .btn-wrappers button{
+    background-color: rgb(0, 15, 230);
+    border: 0px;
+    border-radius: 4px;
+    color: white;
+    padding: 5px;
+    box-shadow: black 0px 1px 5px;
+}
+

@@ -1,0 +1,21 @@
+/* .header{
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+} */
+.header-1{
+   width: 149px; 
+}
+
+.div-ul li{
+    margin-left: 80px;
+}
+
+.text-1{
+    background-color: white;
+}
+.text-2{
+    background-color: white;
+    border: none;
+}
+
