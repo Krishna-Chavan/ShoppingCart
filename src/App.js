@@ -37,7 +37,7 @@ function App() {
         {/* <ProductList /> */}
         {/* <ProductList /> */}
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );
