@@ -14,6 +14,8 @@ import Furniture from './components/furnitures/Furniture';
 import DealsOfDayList from './components/dealsOfDay/DealsOfDayList';
 import CountDownTimer from './components/timer/CountDownTimer';
 import Footer from './components/footer/Footer';
+import Filter from './components/filter/Filter';
+import Signup from './components/signup/Signup';
 function App() {
  
   return (
@@ -34,6 +36,8 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/furnitures" component={Furniture} />
         <Route exact path="/timer" component={CountDownTimer} />
+        <Route exact path="/signup" component={Signup} />
+        {/* <Route exact path="/user" component={Filter} /> */}
         {/* <ProductList /> */}
         {/* <ProductList /> */}
 

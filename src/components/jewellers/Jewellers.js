@@ -1,9 +1,11 @@
 import React,{useState,useEffect} from 'react'
 import axios  from 'axios'
 import JewellersList from './JewellersList'
+import Header from '../header/Header';
 
 export default function Jewellers() {
     const [jewellers, setJewellers] = useState([])
+    const [searctTerm, setSearctTerm] = useState('');
 
     const fetchJewellers = async ()=>{
         const response = await axios.get(`https://fakestoreapi.com/products/category/jewelery`)

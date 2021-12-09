@@ -1,9 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './Header.css'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router'
 
 export default function Header() {
+
     const history = useHistory();
     function handleClick(){
         history.push('/login')

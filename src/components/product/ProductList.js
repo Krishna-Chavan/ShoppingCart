@@ -2,9 +2,14 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import ProductDisplay from './ProductDisplay'
 import { Link } from 'react-router-dom'
+import Fade from 'react-reveal/Fade'
+import Zoom from 'react-reveal/Zoom'
+import Modal from 'react-modal'
 
 export default function ProductList() {
     const [products, setProducts] = useState([])
+    const [searchItem, setSearchItem] = useState('')
+
     // const [cartItems, setCartItems] = useState([])
     // const onAdd = (product) => {
     //     const exists = cartItems.find(x => x.id === product.id)
@@ -50,24 +55,35 @@ export default function ProductList() {
                             <li class="nav-item">
                                 <Link class="nav-link" to="/furnitures">Home & Furniture</Link>
                             </li>
+                            <li class="nav-item">
+                                <input type="text" placeholder="SearchProduct" onChange={(e) => setSearchItem(e.target.value)} />
+                            </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            <div className="row">
-                {
-                    products.map((product) =>
-                        <ProductDisplay
-                            key={product.id}
-                            image={product.image}
-                            title={product.title}
-                            price={product.price}
-                            category={product.category}
+            <Fade top cascade>
+                <div className="row">
+                    {
+                        products.filter((val) => {
+                            if (searchItem === "") {
+                                return val
+                            } else if (val.category.toLowerCase().includes(searchItem.toLowerCase())) {
+                                return val;
+                            }
+                        }).map((product) =>
+                            <ProductDisplay
+                                key={product.id}
+                                image={product.image}
+                                title={product.title}
+                                price={product.price}
+                                category={product.category}
                             // onAdd={onAdd(product)}
-                        />
-                    )
-                }
-            </div>
+                            />
+                        )
+                    }
+                </div>
+            </Fade>
             {/* <CartItem onAdd={onAdd} cartItems={cartItem}/> */}
         </div>
     )

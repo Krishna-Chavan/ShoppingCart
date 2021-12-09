@@ -7,6 +7,7 @@ export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [data, setdata] = useState([]);
+    const [loggedIn, setLoggedIn] = useState(false);
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
 
@@ -21,6 +22,8 @@ export default function Login() {
             console.log(allEntry);
             setEmailError('');
             setPasswordError('');
+            setLoggedIn(true);
+            history.push('/');
         } else {
             setEmailError('Invalid EmailId');
             setPasswordError('Invalid password');
